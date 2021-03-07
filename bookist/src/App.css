@@ -15,11 +15,8 @@
 .searchBar{
   display: flex;
   position: relative;
-  
-  text-align: center;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  left: 250px;
   margin: 20px;
  
 }
@@ -32,35 +29,52 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
- 
   border-radius: 0px;
+ 
 }
 
 .bookList{
   display: flex;
-  height: 65vh;
-  width: 70vw;
+  height: 80vh;
+  width: 75vw;
   position: relative;
-  
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: center;
   border-right: black solid 1px;
+  
 }
-img{
-  position: relative;
+
+.individualBooks{
   display: flex;
-  flex-direction: row;
+  position: relative;
+  width: 75vw;
+  height: 80vh;
+  justify-content: space-between;
   flex-wrap: wrap;
-  height: 50px;
-  width: 40px;
+}
+
+.bookAndTitle{
+  width: 11vw;
+  height: 20vh;
+}
+
+img{
+  height: 20vh;
+  width: 11vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lable{
+  width: 11vw;
 }
 
 .shelf{
   display: flex;
   position: relative;
-  width: 30vw;
+  width: 25vw;
+  height: 80vh;
   justify-content: center;
-  align-items: flex-start;
+  
  
 }
 
@@ -72,4 +86,22 @@ button {
   width: 100px;
   /* font-weight: 700; */
   
+}
+
+h3{
+  font-weight: light;
+  font-size: smaller;
+}
+
+.title{
+  text-decoration: underline;
+}
+
+.search{
+  display: flex;
+  position: relative;
+  width: 25vw;
+  height: 5vh;
+  align-items: center;
+  justify-content: space-between;
 }

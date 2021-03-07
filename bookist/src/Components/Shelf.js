@@ -1,14 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 
 const Shelf = (props) => {
-  const {shelf, clearShelf} = props
+  let mappedTitles = props.shelf.map(elem => <div>{elem.title}</div>);
+
   return (
     <div>
       <h2>My Shelf</h2>
-      <ul>{shelf.map(elem => <li>{elem.title}</li>)}</ul>
+      <div>{(mappedTitles)}</div>
       <button onClick={props.clearShelf}>Clear Shelf</button>
     </div>
-  )
+  );
 }
 
 export default Shelf

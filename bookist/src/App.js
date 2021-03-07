@@ -10,32 +10,35 @@ class App extends Component {
   constructor(){
     super();
     this.state ={
-      books: data,
-      shelf: []
+      data,
+      shelf: [],
     }
-
     this.addToShelf = this.addToShelf.bind(this)
     this.clearShelf = this.clearShelf.bind(this)
     this.filterBooks = this.filterBooks.bind(this)
-  }
-
-  filterBooks(input){
-    let filteredBooks = this.state.books.filter(input)
-    this.setState({books:filteredBooks})
-
+    this.reset = this.reset.bind(this)
   }
 
   addToShelf(){
-    this.state.shelf.push()
+    this.state.shelf.push();
+    console.log('Clicked!')
   }
 
   clearShelf(){
-    this.state.shelf.reset()
+    this.setState({ shelf: []})
+  }
+
+  filterBooks(input){
+    let filteredBooks = this.state.books.filter((elem)=> {
+      return elem.includes(input)
+    })
+    this.setState({books:filteredBooks})
   }
 
   reset(){
-    this.setState({books: data})
+
   }
+  
 
   render(){
     return (
@@ -44,22 +47,23 @@ class App extends Component {
           <Header />
         </div>
         <div className="searchBar">
-          <SearchBar filterBooks={this.state.filterBooks}
-          reset={this.state.reset}
+          <SearchBar 
+          filterBooks={this.filterBooks}
+          reset={this.reset}
           />
         </div>
         <div className='container'>
           <section className='bookList'>
-            <BookList 
-            books={this.state.books} 
-            addToShelf={this.state.addToShelf}
+            <BookList
+            books={this.state.data}
+            addToShelf={this.addToShelf}
             />
           </section>
           <section className='shelf'>
-            <Shelf  
+            <Shelf 
             shelf={this.state.shelf}
-            clearShelf={this.state.clearShelf}
-          />
+            clearShelf={this.clearShelf}
+            />
           </section>
         </div>
       </div>
