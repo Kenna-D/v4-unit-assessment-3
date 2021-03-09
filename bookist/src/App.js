@@ -19,9 +19,8 @@ class App extends Component {
     this.reset = this.reset.bind(this)
   }
 
-  addToShelf(){
-    this.state.shelf.push();
-    console.log('Clicked!')
+  addToShelf(bookTitle){
+    this.setState({shelf: [...this.state.shelf, bookTitle]})
   }
 
   clearShelf(){
